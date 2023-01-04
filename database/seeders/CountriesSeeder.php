@@ -1,7 +1,11 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
-use EzitisItIs\Countries\Countries;
+use EzitisItIs\Countries\Models\Countries;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Config;
 
 class CountriesSeeder extends Seeder {
 
@@ -12,11 +16,11 @@ class CountriesSeeder extends Seeder {
      */
     public function run()
     {
-        DB::table(\Config::get('countries.table_name'))->delete();
+        DB::table(Config::get('countries.table_name'))->delete();
 
         $countries = (new Countries())->getList();
         foreach ($countries as $countryId => $country){
-            DB::table(\Config::get('countries.table_name'))->insert(array(
+            DB::table(Config::get('countries.table_name'))->insert(array(
                 'id' => $countryId,
                 'capital' => ((isset($country['capital'])) ? $country['capital'] : null),
                 'citizenship' => ((isset($country['citizenship'])) ? $country['citizenship'] : null),

@@ -3,6 +3,7 @@
 namespace EzitisItIs\Countries\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Config;
 
 /**
  * CountryList
@@ -27,7 +28,7 @@ class Countries extends Model {
      */
     public function __construct()
     {
-        $this->table = \Config::get('countries.table_name');
+        $this->table = Config::get('countries.table_name');
     }
 
     /**
@@ -38,7 +39,7 @@ class Countries extends Model {
     protected function getCountries()
     {
         if (is_null($this->countries) || empty($this->countries)) {
-            $this->countries = json_decode(file_get_contents(__DIR__ . '/Models/countries.json'), true);
+            $this->countries = json_decode(file_get_contents(__DIR__ . '/../../stubs/countries.json'), true);
         }
 
         return $this->countries;
