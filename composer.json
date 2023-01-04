@@ -1,0 +1,37 @@
+{
+    "name": "ezitisitis/laravel-countries",
+    "description": "Bundle for Laravel, which provides ISO 3166_2, 3166_3, currency, Capital, and more data for all countries",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marks Bogdanovs",
+            "email": "mail@ezitisitis.com",
+            "homepage": "https://ezitisitis.com",
+            "role": "developer"
+        }
+    ],
+    "keywords" : [
+        "laravel",
+        "countries",
+        "iso_3166_2",
+        "iso_3166_3"
+    ],
+    "autoload": {
+        "psr-4": {
+            "EzitisItIs\\Countries\\": "src/"
+        }
+    },
+
+    "minimum-stability": "stable",
+    "require": {
+        "laravel/framework": ">=8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EzitisItIs\\Countries\\CountriesServiceProvider"
+            ]
+        }
+    }
+}
