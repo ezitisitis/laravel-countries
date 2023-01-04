@@ -12,7 +12,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $name = 'countries:install {--force=false}';
+    protected $signature = 'countries:install {--force=false : forcing to publish fresh publishable}';
 
     /**
      * The console command description.
