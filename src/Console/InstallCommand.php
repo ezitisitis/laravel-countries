@@ -12,7 +12,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $name = 'countries:install {--y} {--force=false}';
+    protected $name = 'countries:install {--force=false}';
 
     /**
      * The console command description.
@@ -30,8 +30,8 @@ class InstallCommand extends Command
     {
         $this->info('Publishing all the publishable files (migrations, seeder and config)');
         $this->line('');
-        $this->callSilent('vendor:publish', ['--tag' => 'countries-migrations', '--force' => $this->option('force')]);
-        $this->callSilent('vendor:publish', ['--tag' => 'countries-seeders', '--force' => $this->option('force')]);
-        $this->callSilent('vendor:publish', ['--tag' => 'countries-config', '--force' => $this->option('force')]);
+        $this->call('vendor:publish', ['--tag' => 'countries-migrations', '--force' => $this->option('force')]);
+        $this->call('vendor:publish', ['--tag' => 'countries-seeders', '--force' => $this->option('force')]);
+        $this->call('vendor:publish', ['--tag' => 'countries-config', '--force' => $this->option('force')]);
     }
 }
