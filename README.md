@@ -43,3 +43,7 @@ and executing:
 ```bash
 php artisan db:seed
 ```
+
+## Credits
+
+- [Marks Bogdanovs](https://www.ezitisitis.com)
