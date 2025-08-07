@@ -1,5 +1,8 @@
 # Laravel Countries
 
+![Packagist Version](https://img.shields.io/packagist/v/ezitisitis/laravel-countries)
+![GitHub License](https://img.shields.io/github/license/ezitisitis/laravel-countries)
+
 Bundle for Laravel, which provides ISO 3166_2, 3166_3, currency, Capital, and more data for all countries
 
 **Notice: this version is for Laravel 8 and above**
