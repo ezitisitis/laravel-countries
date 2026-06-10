@@ -15,6 +15,8 @@ class CountriesServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        $this->loadJsonTranslationsFrom(__DIR__.'/../lang');
+
         $this->configurePublishing();
         $this->configureCommands();
     }
@@ -32,11 +34,16 @@ class CountriesServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../database/migrations/2023_01_01_000000_create_countries_table.php' => database_path('migrations/2023_01_01_000000_create_countries_table.php'),
             __DIR__.'/../database/migrations/2023_01_01_000001_charify_countries_table.php' => database_path('migrations/2023_01_01_000001_charify_countries_table.php'),
+            __DIR__.'/../database/migrations/2026_06_11_002340_seed_countries_table.php' => database_path('migrations/2026_06_11_002340_seed_countries_table.php'),
         ], 'countries-migrations');
 
         $this->publishes([
             __DIR__.'/../database/seeders/CountriesSeeder.php' => database_path('seeders/CountriesSeeder.php')
         ], 'countries-seeders');
+
+        $this->publishes([
+            __DIR__.'/../lang' => $this->app->langPath('vendor/countries'),
+        ], 'countries-lang');
     }
 
     protected function configureCommands()
